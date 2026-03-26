@@ -1,0 +1,50 @@
+<view style="display: flex; flex-direction: column; min-height: 100vh; background: #fdfcf8; padding: 140rpx 40rpx 0; box-sizing: border-box; position: relative;">
+  
+  <view style="margin-bottom: 40rpx;">
+    <text style="font-size: 46rpx; font-weight: bold; color: #333;">成长日记</text>
+  </view>
+
+  <view style="display: flex; align-items: center; gap: 20rpx; margin-bottom: 40rpx;">
+    <view style="flex: 1; height: 90rpx; background: #fff; border-radius: 45rpx; display: flex; align-items: center; padding: 0 35rpx; box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.03);">
+      <icon type="search" size="14" color="#ccc"></icon>
+      <input style="margin-left: 20rpx; font-size: 28rpx; flex: 1;" placeholder="搜索内容或标签" placeholder-style="color:#ccc" />
+    </view>
+    <view style="width: 90rpx; height: 90rpx; background: #fff; border-radius: 25rpx; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6rpx; box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.03);">
+      <view style="width: 30rpx; height: 4rpx; background: #333;"></view>
+      <view style="width: 20rpx; height: 4rpx; background: #333;"></view>
+    </view>
+  </view>
+
+  <scroll-view scroll-y style="flex: 1; padding-bottom: 120rpx;">
+    <block wx:if="{{diaryList.length > 0}}">
+      <view wx:for="{{diaryList}}" wx:key="index" style="background: #fff; border-radius: 35rpx; padding: 35rpx; margin-bottom: 30rpx; box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.01);">
+        
+        <view style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20rpx;">
+          <view style="display: flex; align-items: center;">
+            <text style="font-size: 34rpx; font-weight: bold; color: #333; margin-right: 15rpx;">{{item.date}}</text>
+            <text style="font-size: 26rpx; color: #aaa;">{{item.tag || '日常'}}</text>
+          </view>
+          <view style="font-size: 24rpx; padding: 8rpx 25rpx; border-radius: 20rpx; background: {{item.status === '活泼' ? '#eef7ee' : '#f0f4f8'}}; color: {{item.status === '活泼' ? '#7eb37e' : '#8faadc'}};">
+            {{item.status || '正常'}}
+          </view>
+        </view>
+
+        <view style="font-size: 28rpx; color: #666; line-height: 1.6;">{{item.content}}</view>
+
+        <view wx:if="{{item.images && item.images.length > 0}}" style="display: flex; flex-wrap: wrap; gap: 15rpx; margin-top: 25rpx;">
+          <image wx:for="{{item.images}}" wx:for-item="img" wx:key="*this" src="{{img}}" mode="aspectFill" style="width: 180rpx; height: 180rpx; border-radius: 20rpx; background: #f7f7f7;"></image>
+        </view>
+      </view>
+    </block>
+    
+    <view wx:else style="text-align: center; color: #ccc; margin-top: 200rpx; font-size: 26rpx;">
+      <view style="font-size: 80rpx; margin-bottom: 20rpx;">📝</view>
+      <text>记录毛孩子的第一份心情吧</text>
+    </view>
+  </scroll-view>
+
+  <view bindtap="goToEdit" style="position: fixed; right: 50rpx; bottom: 180rpx; width: 110rpx; height: 110rpx; background: #333; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 10rpx 30rpx rgba(0,0,0,0.2); z-index: 99;">
+    <text style="color: #fff; font-size: 60rpx; font-weight: 300; margin-top: -6rpx;">+</text>
+  </view>
+
+</view>

@@ -1,0 +1,95 @@
+/* pages/profile/profile.wxss */
+/* 全局背景色，确保色调柔和 */
+.container {
+  background-color: #fdfaf7; 
+  min-height: 100vh;
+  padding: 40rpx;
+}
+
+/* 1. 顶部呼吸感重塑 */
+.header-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120rpx; /* 增加下移距离，视觉重心更稳 */
+  margin-bottom: 80rpx;
+}
+
+/* 2. 核心：精致头像框 */
+.avatar-wrapper {
+  width: 220rpx; /* 稍微加大，撑起顶部气场 */
+  height: 220rpx;
+  background-color: #f9a085; 
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30rpx;
+  /* 奶油风的关键：柔和的投影 */
+  box-shadow: 0 15rpx 40rpx rgba(249, 160, 133, 0.3);
+}
+.avatar {
+  width: 140rpx;
+  height: 140rpx;
+}
+.user-name { font-size: 42rpx; font-weight: bold; color: #333; }
+.user-desc { font-size: 26rpx; color: #aaa; margin-top: 12rpx; }
+
+/* 3. 放大方块：不仅是变大，还要变“润” */
+.section-group { margin-bottom: 50rpx; }
+.section-label {
+  font-size: 28rpx;
+  color: #999;
+  margin: 0 0 25rpx 20rpx;
+  display: block;
+}
+
+.setting-card, .function-card {
+  background: #fff;
+  border-radius: 45rpx; /* 更圆润的角 */
+  padding: 40rpx 50rpx; 
+  box-shadow: 0 8rpx 30rpx rgba(0,0,0,0.03); /* 极轻阴影增加质感 */
+}
+
+/* 4. 内部元素细节优化 */
+.setting-item, .menu-row {
+  display: flex;
+  align-items: center;
+}
+
+.row-icon { font-size: 44rpx; } /* 放大图标 */
+
+.row-content { 
+  flex: 1; 
+  margin-left: 30rpx; 
+  display: flex;
+  flex-direction: column;
+}
+.row-title { font-size: 32rpx; font-weight: 500; color: #333; }
+.row-subtitle { font-size: 24rpx; color: #bbb; margin-top: 6rpx; }
+
+.row-arrow { color: #eee; font-size: 32rpx; margin-left: 10rpx; }
+
+/* 5. 主题模式切换模拟区 */
+.theme-toggle {
+  background: #f8f8f8;
+  border-radius: 50rpx;
+  padding: 8rpx;
+  display: flex;
+  align-items: center;
+}
+.toggle-icon {
+  padding: 12rpx 30rpx;
+  font-size: 28rpx;
+}
+.toggle-icon.active {
+  background: #fff;
+  border-radius: 40rpx;
+  box-shadow: 0 4rpx 15rpx rgba(0,0,0,0.05);
+}
+
+.divider {
+  height: 1rpx;
+  background: #fcfcfc;
+  margin: 15rpx 0 15rpx 70rpx;
+}

@@ -1,0 +1,83 @@
+.page-container {
+  min-height: 100vh;
+  background-color: #fdfcf8; /* 奶油色底 */
+  padding: 100rpx 40rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 头部对齐 */
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.page-title { font-size: 44rpx; font-weight: bold; color: #333; }
+.add-icon-container {
+  width: 56rpx;
+  height: 56rpx;
+  border: 4rpx solid #333;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add-icon { font-size: 40rpx; font-weight: bold; color: #333; margin-top: -4rpx; }
+
+/* 搜索栏样式 */
+.search-section {
+  display: flex;
+  align-items: center;
+  gap: 20rpx;
+  margin-bottom: 40rpx;
+}
+.search-input-wrap {
+  flex: 1;
+  height: 88rpx;
+  background: #fff;
+  border-radius: 44rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.02);
+}
+.search-input { margin-left: 15rpx; font-size: 28rpx; flex: 1; }
+.p-class { color: #ccc; }
+
+.filter-btn {
+  width: 88rpx;
+  height: 88rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 16rpx rgba(0,0,0,0.02);
+}
+.filter-line { width: 30rpx; height: 4rpx; background: #333; box-shadow: 0 10rpx #333, 0 -10rpx #333; }
+
+/* 卡片样式 */
+.diary-list { flex: 1; }
+.diary-card {
+  background: #fff;
+  border-radius: 32rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.01);
+}
+.card-header { display: flex; justify-content: space-between; margin-bottom: 20rpx; }
+.date-text { font-size: 32rpx; font-weight: bold; margin-right: 15rpx; }
+.pet-name { font-size: 24rpx; color: #999; }
+.status-tag {
+  font-size: 24rpx;
+  padding: 6rpx 20rpx;
+  border-radius: 20rpx;
+  background: #f0f0f0;
+  color: #999;
+}
+.status-tag.active { background: #e8f5e9; color: #81c784; } /* 活泼状态的绿色标签 */
+.card-content { font-size: 28rpx; color: #666; line-height: 1.6; }
+
+.empty-state { text-align: center; color: #ccc; padding-top: 100rpx; font-size: 26rpx; }

@@ -1,0 +1,49 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <view class="header-section">
+    <view class="avatar-wrapper">
+      <image class="avatar" src="/images/avatar.png"></image>
+    </view>
+    <view class="user-info">
+      <text class="user-name">宠物主人</text>
+      <text class="user-desc">记录每一个珍贵瞬间</text>
+    </view>
+  </view>
+
+  <view class="section-group">
+    <text class="section-label">外观</text>
+    <view class="setting-card">
+      <view class="setting-item">
+        <view class="left-icon">⚙️</view>
+        <text class="setting-text">主题模式</text>
+        <view class="theme-toggle">
+          <text class="toggle-icon active">☀️</text>
+          <text class="toggle-icon">🌙</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="section-group">
+    <text class="section-label">特色功能</text>
+    <view class="function-card">
+      <view class="menu-row" bindtap="navToBlank" data-title="纪念日提醒">
+        <view class="row-icon">⏰</view>
+        <view class="row-content">
+          <text class="row-title">纪念日提醒</text>
+          <text class="row-subtitle">生日、领养日倒计时</text>
+        </view>
+        <text class="row-arrow">></text>
+      </view>
+      <view class="divider"></view>
+      <view class="menu-row" bindtap="navToBlank" data-title="成长相册">
+        <view class="row-icon">📸</view>
+        <view class="row-content">
+          <text class="row-title">成长相册</text>
+          <text class="row-subtitle">按时间轴浏览宠物照片</text>
+        </view>
+        <text class="row-arrow">></text>
+      </view>
+    </view>
+  </view>
+</view>

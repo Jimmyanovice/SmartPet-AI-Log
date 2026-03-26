@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/record/record",
+    "pages/chat/chat",
+    "pages/community/community",
+    "pages/profile/profile",
+    "pages/blank/blank"
+  ],
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#95c78f",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/tabs/home.png",
+        "selectedIconPath": "images/tabs/home_active.png"
+      },
+      {
+        "pagePath": "pages/record/record",
+        "text": "日记",
+        "iconPath": "images/tabs/record.png",
+        "selectedIconPath": "images/tabs/record_active.png"
+      },
+      {
+        "pagePath": "pages/chat/chat",
+        "text": "聊天",
+        "iconPath": "images/tabs/chat.png",
+        "selectedIconPath": "images/tabs/chat_active.png"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "社区",
+        "iconPath": "images/tabs/community.png",
+        "selectedIconPath": "images/tabs/community_active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/tabs/me.png",
+        "selectedIconPath": "images/tabs/me_active.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

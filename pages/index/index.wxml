@@ -1,0 +1,63 @@
+<view class="container">
+  <view class="top-bar">
+    <view class="user-info">
+      <image class="avatar" src="/images/avatar.png"></image>
+      <view class="welcome-text">
+        <text class="user-name">你好，铲屎官</text>
+        <view class="location" bindtap="getLocation">
+          <text>{{address}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="ai-card" bindtap="goToRecord">
+    <view class="ai-content">
+      <view class="card-tag">养宠日志</view>
+      <text class="card-desc">记录毛孩子的成长点滴</text>
+      <view class="ai-btn" catchtap="navToBlank" data-title="AI分析报告">AI分析报告</view>
+    </view>
+    <image class="pet-img" src="/images/cat-sample.png" mode="aspectFill"></image>
+  </view>
+
+  <view class="grid-nav">
+    <view class="nav-item" wx:for="{{navs}}" wx:key="index" bindtap="navToBlank" data-title="{{item.text}}">
+      <view class="nav-icon-bg {{item.colorClass}}">
+        <image class="nav-icon" src="{{item.icon}}"></image>
+      </view>
+      <text class="nav-text">{{item.text}}</text>
+    </view>
+  </view>
+
+  <view class="bottom-row">
+    <view class="card-half">
+      <view class="section-header">
+        <view class="section-title">
+          <text>今日任务</text>
+          <text wx:if="{{tasks.length > 0}}"> ({{doneCount}}/{{tasks.length}})</text>
+        </view>
+        <view class="add-task-btn" catchtap="showAddTaskModal">+</view>
+      </view>
+      
+      <scroll-view scroll-y="true" class="task-scroll-area" style="max-height: 300rpx;">
+        <view class="task-wrapper" wx:for="{{tasks}}" wx:key="index">
+          <view class="task-item" catchtap="toggleTask" data-index="{{index}}">
+            <view class="check-dot {{item.done ? 'checked' : ''}}"></view>
+            <text class="task-name {{item.done ? 'text-done' : ''}}">{{item.name}}</text>
+          </view>
+          <view class="divider" wx:if="{{index < tasks.length - 1}}"></view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="card-half">
+      <text class="section-title">心情指数 😊</text>
+      <view class="mood-bar-bg">
+        <view class="mood-bar-active"style="width: {{moodRate}}%;"></view>
+      </view>
+      <view class="next-event">
+        <text>下次驱虫：3天后</text>
+      </view>
+    </view>
+  </view>
+</view>

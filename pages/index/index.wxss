@@ -1,0 +1,167 @@
+/**index.wxss**/
+/* 全局背景 */
+.container { 
+  padding: 30rpx; 
+  background-color: #f9faf7; 
+  min-height: 100vh; 
+  box-sizing: border-box; 
+}
+
+/* 1. 顶部用户信息区 - 解决“位置太高”问题 */
+.top-bar { 
+  display: flex; 
+  align-items: center; 
+  margin-top: 40rpx;    /* 增加顶部间距，避开刘海 */
+  margin-bottom: 50rpx; 
+}
+.avatar { 
+  width: 110rpx; 
+  height: 110rpx; 
+  border-radius: 50%; 
+  margin-right: 24rpx; 
+}
+.user-name { font-size: 38rpx; font-weight: bold; color: #333; }
+.location { font-size: 26rpx; color: #999; margin-top: 6rpx; }
+
+/* 2. 养宠日志卡片 */
+.ai-card { 
+  width: 100%; 
+  padding: 45rpx; 
+  background: #fff; 
+  border-radius: 48rpx; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  box-sizing: border-box; 
+  box-shadow: 0 10rpx 40rpx rgba(0,0,0,0.02);
+  margin-bottom: 50rpx;
+}
+.card-tag { font-size: 34rpx; font-weight: bold; color: #000; margin-bottom: 10rpx; }
+.card-desc { font-size: 26rpx; color: #999; }
+.ai-btn { 
+  margin-top: 28rpx; 
+  background: #fff1f2; 
+  color: #ff8e9a; 
+  padding: 12rpx 36rpx; 
+  border-radius: 30rpx; 
+  font-size: 24rpx; 
+  display: inline-block;
+}
+.pet-img { width: 180rpx; height: 180rpx; border-radius: 35rpx; }
+
+/* 3. 四个功能块 (金刚区) - 解决“方格太小”问题 */
+.grid-nav { 
+  display: flex; 
+  justify-content: space-between; 
+  margin-bottom: 60rpx; 
+  padding: 0 10rpx;
+}
+.nav-item { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  width: 25%;
+}
+.nav-icon-bg { 
+  width: 135rpx;   /* 调大方框 */
+  height: 135rpx; 
+  border-radius: 44rpx; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 16rpx; 
+  box-shadow: 0 4rpx 20rpx rgba(0,0,0,0.01);
+}
+.nav-icon { width: 75rpx; height: 75rpx; } /* 调大图标 */
+.nav-text { font-size: 28rpx; color: #555; font-weight: 500; }
+
+/* 4. 底部双卡片布局 */
+.bottom-row { 
+  display: flex; 
+  gap: 24rpx; 
+  width: 100%; 
+  height: 400rpx; 
+}
+.card-half { 
+  flex: 1; 
+  background: #fff; 
+  border-radius: 48rpx; 
+  padding: 35rpx; 
+  box-sizing: border-box; 
+  display: flex;
+  flex-direction: column;
+}
+
+/* 任务与滚轮区域 */
+.section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15rpx;}
+.section-title { font-size: 32rpx; font-weight: bold; color: #333; }
+.task-scroll-area { flex: 1; overflow: hidden; }
+.task-item { display: flex; align-items: center; padding: 22rpx 0; }
+.check-dot { width: 34rpx; height: 34rpx; border: 2rpx solid #eee; border-radius: 50%; margin-right: 18rpx; }
+.check-dot.checked { background: #95c78f; border-color: #95c78f; }
+.task-name { font-size: 30rpx; color: #444; }
+.text-done { color: #ccc; text-decoration: line-through; }
+
+/* 分割线 */
+.divider {
+  height: 1rpx;
+  width: 100%;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.06), transparent);
+}
+
+/* 心情与驱虫 */
+/* 心情指数卡片内部样式 */
+.mood-emoji { 
+  font-size: 36rpx; 
+}
+
+/* 1. 修改进度条背景 - 这里是关键 */
+.mood-bar-bg { 
+  /* --- 调整高度，把宽度拉高一倍多 --- */
+  height: 24rpx; 
+  background: #f5f5f5; 
+  border-radius: 12rpx; /* 增加圆角，更圆润 */
+  margin: 45rpx 0 25rpx; 
+  overflow: hidden; 
+  
+  /* --- 2. 新加入的“生动”线条元素 --- */
+  /* 使用背景渐变来模拟一条倾斜、半透明的光带 */
+  background: linear-gradient(110deg, transparent, rgba(255,255,255,0.2) 40%, rgba(255,255,255,0.2) 60%, transparent), #f5f5f5;
+  background-size: 100% 100%; /* 让新光带铺满 */
+}
+
+/* 保持你的渐变彩色条不变，只加粗它 */
+.mood-bar-active { 
+  height: 100%; 
+  /* 你的彩色渐变不变 */
+  background: linear-gradient(to right, #ff9a9e 0%, #fecfef 1%, #ffcc00 100%); 
+  box-shadow: 0 0 12rpx rgba(255, 204, 0, 0.4); /* 增加一点光晕，更精致 */
+  border-radius: 12rpx; /* 彩色条也要加圆角 */
+}
+
+.next-event { 
+  margin-top: auto; 
+  padding-top: 25rpx; 
+  font-size: 28rpx; 
+  color: #333; 
+  border-top: 1rpx solid #f9f9f9;
+}
+
+::-webkit-scrollbar { width: 0; height: 0; color: transparent; }
+
+.add-task-btn { 
+  width: 48rpx; 
+  height: 48rpx; 
+  border: 1rpx solid #eee; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #bbb;
+}
+
+/* 颜色类 */
+.bg-green { background: #eef7f2; } 
+.bg-red { background: #fff1f1; }
+.bg-yellow { background: #fff9eb; } 
+.bg-blue { background: #f0f5ff; }

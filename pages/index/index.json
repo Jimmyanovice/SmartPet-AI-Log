@@ -1,0 +1,12 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "数智伴宠",
+  "navigationBarBackgroundColor": "#f9faf7",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于记录养宠日记时的地点"
+    }
+  }
+}
